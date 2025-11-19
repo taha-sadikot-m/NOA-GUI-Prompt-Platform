@@ -37,6 +37,12 @@ export default defineConfig(({ mode }) => {
           }
         },
         chunkSizeWarningLimit: 1000,
+        terserOptions: isProduction ? {
+          compress: {
+            drop_console: true,
+            drop_debugger: true,
+          },
+        } : undefined,
       },
       optimizeDeps: {
         include: ['react', 'react-dom', 'lucide-react']
