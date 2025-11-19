@@ -27,11 +27,11 @@ View your app in AI Studio: https://ai.studio/apps/drive/1VtYI2RiKOqPJVpn1ipLiY2
    npm install
    ```
 
-3. **Set up environment variables:**
+3. **Set up environment variables (optional):**
    ```bash
    cp .env.example .env
    ```
-   Then edit `.env` and set your `GEMINI_API_KEY` to your actual Gemini API key.
+   The project works without any environment variables, but you can customize settings if needed.
 
 4. **Run the development server:**
    ```bash
@@ -53,10 +53,9 @@ View your app in AI Studio: https://ai.studio/apps/drive/1VtYI2RiKOqPJVpn1ipLiY2
    - Import your repository
    - Vercel will automatically detect it's a Vite project
 
-3. **Configure Environment Variables:**
-   - In your Vercel project dashboard, go to Settings → Environment Variables
-   - Add `GEMINI_API_KEY` with your actual API key value
-   - Set it for Production, Preview, and Development environments
+3. **Configure Environment Variables (if needed):**
+   - Your project works without environment variables
+   - If you add custom environment variables later, configure them in Vercel project dashboard under Settings → Environment Variables
 
 4. **Deploy:**
    - Click "Deploy"
@@ -79,11 +78,11 @@ View your app in AI Studio: https://ai.studio/apps/drive/1VtYI2RiKOqPJVpn1ipLiY2
    vercel
    ```
 
-4. **Set Environment Variables:**
+4. **Set Environment Variables (if needed):**
    ```bash
-   vercel env add GEMINI_API_KEY
+   # Only if you add custom environment variables later
+   vercel env add YOUR_VARIABLE_NAME
    ```
-   Enter your API key when prompted.
 
 5. **Deploy to Production:**
    ```bash
@@ -130,9 +129,11 @@ The project is configured with:
 
 ## 🌍 Environment Variables
 
+This project currently doesn't require any environment variables. It's a static React application that works out of the box.
+
 | Variable | Description | Required |
 |----------|-------------|----------|
-| `GEMINI_API_KEY` | Your Gemini AI API key | Yes |
+| None | Static website - no environment variables needed | No |
 
 ## 📦 Dependencies
 

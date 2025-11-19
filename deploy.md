@@ -5,7 +5,7 @@
 ### 1. Prerequisites Check
 - [ ] Node.js 18+ installed
 - [ ] Git repository created
-- [ ] Gemini API key ready
+- [ ] Project builds successfully locally
 
 ### 2. Prepare for Deployment
 
@@ -44,10 +44,11 @@ npm run preview
    - Output Directory: `dist` (auto-detected)
    - Install Command: `npm install` (auto-detected)
 
-4. **Add Environment Variables:**
-   - Go to Settings → Environment Variables
-   - Add `GEMINI_API_KEY` = `your_actual_api_key_here`
-   - Apply to: Production, Preview, Development
+4. **Configure Project:**
+   - Framework Preset: Vite (auto-detected)
+   - Build Command: `npm run build` (auto-detected)
+   - Output Directory: `dist` (auto-detected)
+   - No environment variables needed for this static site
 
 5. **Deploy:**
    - Click "Deploy"
@@ -66,8 +67,7 @@ vercel login
 # Deploy (follow the prompts)
 vercel
 
-# Set environment variables
-vercel env add GEMINI_API_KEY
+# No environment variables needed for this static site
 
 # Deploy to production
 vercel --prod
@@ -75,9 +75,9 @@ vercel --prod
 
 ### 4. Post-Deployment
 
-1. **Test your live site:**
+2. **Test your live site:**
    - Check all pages load correctly
-   - Verify API functionality works
+   - Verify navigation and interactions work
    - Test responsive design on mobile
 
 2. **Set up domain (optional):**
@@ -105,6 +105,8 @@ npm run build
 ```
 
 ### Environment Variables Issues
+
+This project doesn't require environment variables, but if you add them in the future:
 
 1. Make sure `.env` is not committed to git (check `.gitignore`)
 2. Verify environment variables are set in Vercel dashboard
