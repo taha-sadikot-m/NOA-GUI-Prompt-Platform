@@ -1,9 +1,6 @@
 
 # NOA - The Prompt Engineering Ecosystem
 
-A modern, responsive web application built with React, TypeScript, and Vite, designed for prompt engineering services and AI solutions.
-
-View your app in AI Studio: https://ai.studio/apps/drive/1VtYI2RiKOqPJVpn1ipLiY2DA9m6EehDe
 
 ## 🚀 Quick Start
 
