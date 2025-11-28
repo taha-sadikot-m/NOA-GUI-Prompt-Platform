@@ -1,8 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SectionHeader from './SectionHeader';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
+import { Pool } from '@neondatabase/serverless';
 
 const Contact: React.FC = () => {
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('loading');
+    setMessage('');
+
+    try {
+      const connectionString = import.meta.env.VITE_DATABASE_URL;
+      
+      if (!connectionString) {
+        throw new Error('Database configuration missing');
+      }
+
+      const pool = new Pool({ connectionString });
+      
+      // Check if email exists
+      const checkResult = await pool.query('SELECT id FROM waitlist WHERE email = $1', [email]);
+      
+      if (checkResult.rows.length > 0) {
+        setStatus('error');
+        setMessage('Email already registered');
+        await pool.end();
+        return;
+      }
+
+      // Insert email
+      await pool.query('INSERT INTO waitlist (email) VALUES ($1)', [email]);
+      await pool.end();
+
+      setStatus('success');
+      setMessage('You have been added to the waitlist!');
+      setEmail('');
+    } catch (error: any) {
+      console.error('Waitlist error:', error);
+      setStatus('error');
+      setMessage(error.message || 'Failed to join waitlist. Please try again.');
+    }
+  };
+
   return (
     <section className="w-full" id="contact-us">
         <SectionHeader 
@@ -20,21 +63,54 @@ const Contact: React.FC = () => {
             </p>
           </div>
 
-          <form className="flex flex-col gap-5" onSubmit={(e) => e.preventDefault()}>
+          <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
             <div className="flex flex-col gap-2">
               <label className="text-base font-medium ml-1">Email Address</label>
               <input 
                 type="email" 
                 required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="name@company.com" 
-                className="px-4 py-4 md:px-6 md:py-5 rounded-xl border border-black bg-white focus:outline-none focus:ring-2 focus:ring-positivus-green transition-all focus:scale-[1.01] text-lg" 
+                disabled={status === 'loading' || status === 'success'}
+                className="px-4 py-4 md:px-6 md:py-5 rounded-xl border border-black bg-white focus:outline-none focus:ring-2 focus:ring-positivus-green transition-all focus:scale-[1.01] text-lg disabled:opacity-70 disabled:cursor-not-allowed" 
               />
             </div>
 
-            <button className="bg-positivus-dark text-white py-4 md:py-5 rounded-xl hover:bg-gray-800 transition-all hover:shadow-lg hover:scale-[1.02] w-full mt-2 text-lg font-bold flex items-center justify-center gap-3 group">
-              Join Waitlist
-              <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+            <button 
+              disabled={status === 'loading' || status === 'success'}
+              className={`text-white py-4 md:py-5 rounded-xl transition-all w-full mt-2 text-lg font-bold flex items-center justify-center gap-3 group ${
+                status === 'success' 
+                  ? 'bg-green-600 hover:bg-green-700' 
+                  : 'bg-positivus-dark hover:bg-gray-800 hover:shadow-lg hover:scale-[1.02]'
+              } disabled:opacity-80 disabled:hover:scale-100 disabled:hover:shadow-none`}
+            >
+              {status === 'loading' ? (
+                <>
+                  <Loader2 className="animate-spin" />
+                  Joining...
+                </>
+              ) : status === 'success' ? (
+                <>
+                  <CheckCircle />
+                  Joined Successfully
+                </>
+              ) : (
+                <>
+                  Join Waitlist
+                  <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+                </>
+              )}
             </button>
+            
+            {message && (
+              <div className={`flex items-center gap-2 text-sm font-medium ${
+                status === 'error' ? 'text-red-600' : 'text-green-600'
+              }`}>
+                {status === 'error' && <AlertCircle size={16} />}
+                {message}
+              </div>
+            )}
             
             <p className="text-sm text-gray-500 text-center md:text-left ml-1">
                 Join 2,000+ engineers already on the list. No spam, ever.

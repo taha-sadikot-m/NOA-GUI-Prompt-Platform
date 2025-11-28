@@ -9,6 +9,7 @@ const Header: React.FC = () => {
     { name: 'Features', href: '#features' },
     { name: 'Use Cases', href: '#use-cases' },
     { name: 'How it Works', href: '#process' },
+    { name: 'Pricing', href: '#pricing' },
   ];
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {

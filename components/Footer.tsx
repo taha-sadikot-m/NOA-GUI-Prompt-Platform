@@ -40,10 +40,9 @@ const Footer: React.FC = () => {
         <div className="flex flex-col items-center lg:items-start gap-6 border-b border-gray-600 pb-12 mb-12">
              <div className="bg-positivus-green text-black px-2 rounded-md w-fit font-medium">Contact us:</div>
              <div className="flex flex-col gap-2 text-base font-light text-gray-300 text-center lg:text-left">
-                <p>Email: hello@noa-ai.com</p>
-                <p>Phone: 555-123-4567</p>
-                <p>Address: 88 Tech Boulevard <br className="hidden md:block"/> Innovation Valley, CA 90210</p>
-             </div>
+                <p>Email: taha.sadikot.m@gmail.com</p>
+                <p>Phone: +91 9427030666</p>
+              </div>
         </div>
 
         {/* Bottom Row: Copyright */}

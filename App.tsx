@@ -5,6 +5,7 @@ import Services from './components/Services';
 import CTA from './components/CTA';
 import CaseStudies from './components/CaseStudies';
 import Process from './components/Process';
+import Pricing from './components/Pricing';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -19,6 +20,7 @@ const App: React.FC = () => {
           <CTA />
           <CaseStudies />
           <Process />
+          <Pricing />
           <Contact />
         </main>
       </div>
