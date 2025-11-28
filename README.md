@@ -1,12 +1,6 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
 
 # NOA - The Prompt Engineering Ecosystem
 
-A modern, responsive web application built with React, TypeScript, and Vite, designed for prompt engineering services and AI solutions.
-
-View your app in AI Studio: https://ai.studio/apps/drive/1VtYI2RiKOqPJVpn1ipLiY2DA9m6EehDe
 
 ## 🚀 Quick Start
 
@@ -41,53 +35,6 @@ View your app in AI Studio: https://ai.studio/apps/drive/1VtYI2RiKOqPJVpn1ipLiY2
 5. **Open your browser:**
    Navigate to `http://localhost:3000`
 
-## 🌐 Deploy to Vercel
-
-### Option 1: Deploy from Git Repository
-
-1. **Push your code to GitHub/GitLab/Bitbucket**
-
-2. **Connect to Vercel:**
-   - Go to [vercel.com](https://vercel.com)
-   - Click "New Project"
-   - Import your repository
-   - Vercel will automatically detect it's a Vite project
-
-3. **Configure Environment Variables (if needed):**
-   - Your project works without environment variables
-   - If you add custom environment variables later, configure them in Vercel project dashboard under Settings → Environment Variables
-
-4. **Deploy:**
-   - Click "Deploy"
-   - Your app will be live in minutes!
-
-### Option 2: Deploy using Vercel CLI
-
-1. **Install Vercel CLI:**
-   ```bash
-   npm install -g vercel
-   ```
-
-2. **Login to Vercel:**
-   ```bash
-   vercel login
-   ```
-
-3. **Deploy:**
-   ```bash
-   vercel
-   ```
-
-4. **Set Environment Variables (if needed):**
-   ```bash
-   # Only if you add custom environment variables later
-   vercel env add YOUR_VARIABLE_NAME
-   ```
-
-5. **Deploy to Production:**
-   ```bash
-   vercel --prod
-   ```
 
 ## 🛠️ Build Commands
 
