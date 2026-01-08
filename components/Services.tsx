@@ -54,7 +54,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, theme, imageComponent 
 const Services: React.FC = () => {
   
   const RecommendationIcon = (
-      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full" role="img" aria-label="AI recommendation engine converting chaotic inputs into precise prompts">
         {/* Concept: Signal from Noise - Chaos entering a processor and becoming a clean laser beam */}
         <defs>
             <linearGradient id="laser-grad" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -86,7 +86,7 @@ const Services: React.FC = () => {
   );
 
   const VisualizationIcon = (
-    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full" role="img" aria-label="Multi-model visualization dashboard displaying prompt results across different AI platforms">
         {/* Concept: Holo-Deck / Multi-Screen Perspective */}
         
         {/* Central Projector Base */}
@@ -122,7 +122,7 @@ const Services: React.FC = () => {
   );
 
   const RepositoryIcon = (
-      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full" role="img" aria-label="Centralized prompt repository with organized storage and quick access">
          {/* Concept: The Data Core - Stacked Servers for Dark Mode */}
          
          {/* Shadow Glow */}
@@ -158,7 +158,7 @@ const Services: React.FC = () => {
   );
 
   const SharingIcon = (
-      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full" role="img" aria-label="Community sharing network connecting users, teams, and the world">
         {/* Concept: The Synaptic Web - Nodes exchanging energy */}
         
         {/* Central Hub */}
@@ -201,7 +201,7 @@ const Services: React.FC = () => {
   );
 
   const TemplateIcon = (
-      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full" role="img" aria-label="Prompt template system transforming wireframes into production-ready prompts">
         {/* Concept: The Replicator - Wireframe becoming solid */}
         
         <defs>
@@ -235,7 +235,7 @@ const Services: React.FC = () => {
   );
 
   const EcosystemIcon = (
-      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full" role="img" aria-label="Complete prompt engineering ecosystem with interconnected modules for repository, visualization, and AI">
          {/* Concept: The Connected Hub - Everything physically linked and rotating together */}
          <defs>
             <filter id="eco-glow" x="-20%" y="-20%" width="140%" height="140%">
@@ -304,7 +304,7 @@ const Services: React.FC = () => {
 
 
   return (
-    <section id="features">
+    <section id="features" aria-labelledby="features-heading">
       <SectionHeader 
         title="One Unified Ecosystem" 
         description="Distributed prompt knowledge is a thing of the past. NOA combines discovery, management, visualization, and community into one powerful platform." 

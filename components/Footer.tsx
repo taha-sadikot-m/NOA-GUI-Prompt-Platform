@@ -3,7 +3,7 @@ import { Linkedin, Facebook, Twitter, Sparkles } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="w-full bg-positivus-dark text-white mt-auto">
+    <footer className="w-full bg-positivus-dark text-white mt-auto" role="contentinfo" aria-label="Site footer">
       <div className="w-full max-w-[1600px] mx-auto px-5 sm:px-8 lg:px-12 xl:px-16 py-12 md:py-16">
         
         {/* Top Row: Logo & Nav */}
@@ -24,14 +24,14 @@ const Footer: React.FC = () => {
           </div>
 
           <div className="flex gap-4">
-            <a href="#" className="w-8 h-8 bg-white text-positivus-dark rounded-full flex items-center justify-center hover:bg-positivus-green transition-colors">
-                <Linkedin size={18} fill="currentColor" strokeWidth={0}/>
+            <a href="https://linkedin.com/company/noa" aria-label="Follow NOA on LinkedIn" className="w-8 h-8 bg-white text-positivus-dark rounded-full flex items-center justify-center hover:bg-positivus-green transition-colors">
+                <Linkedin size={18} fill="currentColor" strokeWidth={0} aria-hidden="true"/>
             </a>
-            <a href="#" className="w-8 h-8 bg-white text-positivus-dark rounded-full flex items-center justify-center hover:bg-positivus-green transition-colors">
-                <Facebook size={18} fill="currentColor" strokeWidth={0} />
+            <a href="https://facebook.com/noa" aria-label="Follow NOA on Facebook" className="w-8 h-8 bg-white text-positivus-dark rounded-full flex items-center justify-center hover:bg-positivus-green transition-colors">
+                <Facebook size={18} fill="currentColor" strokeWidth={0} aria-hidden="true" />
             </a>
-            <a href="#" className="w-8 h-8 bg-white text-positivus-dark rounded-full flex items-center justify-center hover:bg-positivus-green transition-colors">
-                 <Twitter size={18} fill="currentColor" strokeWidth={0} />
+            <a href="https://twitter.com/NOA_AI" aria-label="Follow NOA on Twitter" className="w-8 h-8 bg-white text-positivus-dark rounded-full flex items-center justify-center hover:bg-positivus-green transition-colors">
+                 <Twitter size={18} fill="currentColor" strokeWidth={0} aria-hidden="true" />
             </a>
           </div>
         </div>

@@ -3,10 +3,10 @@ import { Zap } from 'lucide-react';
 
 const CTA: React.FC = () => {
   return (
-    <section className="w-full">
+    <section className="w-full" aria-label="Call to action">
       <div className="bg-positivus-dark rounded-[30px] md:rounded-[45px] p-8 md:p-10 lg:p-16 flex flex-col lg:flex-row justify-between items-center gap-10 relative overflow-hidden">
         {/* Background Grid Pattern */}
-        <div className="absolute inset-0 opacity-20 pointer-events-none">
+        <div className="absolute inset-0 opacity-20 pointer-events-none" aria-hidden="true">
              <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(rgba(185,255,102,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(185,255,102,0.1)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
         </div>
         
@@ -17,8 +17,8 @@ const CTA: React.FC = () => {
           <p className="text-base md:text-lg text-gray-300 max-w-md mx-auto lg:mx-0">
             Don't let your best prompts get lost in a notepad. Join the centralized ecosystem and master prompt engineering with the community.
           </p>
-          <button className="bg-positivus-green text-positivus-dark font-bold text-lg px-8 py-4 rounded-xl hover:bg-white transition-all hover:scale-105 flex items-center justify-center gap-2 mx-auto lg:mx-0 w-full sm:w-auto">
-            <Zap size={20} className="fill-current" />
+          <button aria-label="Join the NOA early user waitlist" className="bg-positivus-green text-positivus-dark font-bold text-lg px-8 py-4 rounded-xl hover:bg-white transition-all hover:scale-105 flex items-center justify-center gap-2 mx-auto lg:mx-0 w-full sm:w-auto">
+            <Zap size={20} className="fill-current" aria-hidden="true" />
             Join Early User Waitlist
           </button>
         </div>

@@ -12,9 +12,9 @@ const Hero: React.FC = () => {
   ];
 
   return (
-    <section className="flex flex-col gap-12 lg:gap-24 pt-4 md:pt-12 relative">
+    <section aria-label="Hero section" className="flex flex-col gap-12 lg:gap-24 pt-4 md:pt-12 relative">
       {/* Decorative background blobs */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none" aria-hidden="true">
         <div className="absolute top-20 right-0 w-64 h-64 md:w-96 md:h-96 bg-positivus-green/10 rounded-full blur-3xl animate-pulse-slow"></div>
         <div className="absolute bottom-0 left-10 w-48 h-48 md:w-72 md:h-72 bg-gray-200/50 rounded-full blur-3xl"></div>
       </div>
@@ -37,11 +37,11 @@ const Hero: React.FC = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-            <button className="px-8 py-4 bg-positivus-dark text-white rounded-xl text-lg hover:bg-gray-800 transition-all flex items-center justify-center gap-2 group shadow-lg shadow-positivus-dark/20 w-full sm:w-auto border border-transparent hover:border-positivus-green">
+            <button aria-label="Join the NOA early user waitlist" className="px-8 py-4 bg-positivus-dark text-white rounded-xl text-lg hover:bg-gray-800 transition-all flex items-center justify-center gap-2 group shadow-lg shadow-positivus-dark/20 w-full sm:w-auto border border-transparent hover:border-positivus-green">
               Join Waitlist
-              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform"/>
+              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" aria-hidden="true"/>
             </button>
-            <button className="px-8 py-4 bg-white border border-black text-positivus-dark rounded-xl text-lg hover:bg-gray-50 transition-all flex items-center justify-center w-full sm:w-auto shadow-sm">
+            <button aria-label="Learn how NOA works" className="px-8 py-4 bg-white border border-black text-positivus-dark rounded-xl text-lg hover:bg-gray-50 transition-all flex items-center justify-center w-full sm:w-auto shadow-sm">
               How it Works
             </button>
           </div>
@@ -50,7 +50,7 @@ const Hero: React.FC = () => {
             <div className="flex -space-x-2">
                {[1,2,3,4].map(i => (
                    <div key={i} className="w-10 h-10 rounded-full bg-gray-200 border-2 border-white flex items-center justify-center overflow-hidden shadow-sm">
-                       <img src={`https://picsum.photos/seed/${i + 10}/100`} alt="user" className="w-full h-full object-cover"/>
+                       <img src={`https://picsum.photos/seed/${i + 10}/100`} alt={`NOA user testimonial ${i}`} className="w-full h-full object-cover" loading="lazy"/>
                    </div>
                ))}
             </div>
@@ -61,7 +61,7 @@ const Hero: React.FC = () => {
         {/* Mind Blowing Visualization - The Orchestrator */}
         <div className="w-full lg:w-[52%] flex justify-center items-center relative min-h-[300px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px]">
             <div className="relative w-full h-full flex items-center justify-center">
-                <svg viewBox="0 0 800 800" className="w-full h-full max-w-[700px]" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 800 800" className="w-full h-full max-w-[700px]" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="NOA platform orchestration visualization showing distributed prompt knowledge being centralized into a unified system">
                     <defs>
                          <linearGradient id="core-grad" x1="0%" y1="0%" x2="100%" y2="100%">
                             <stop offset="0%" stopColor="#191A23" />
